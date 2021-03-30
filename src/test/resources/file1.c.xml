@@ -1,0 +1,21 @@
+<errors>
+    <parsererror>
+        <featurestr>
+            (!def(CONFIG_A)&amp;!def(CONFIG_B))
+        </featurestr>
+        <msg>
+            end of input expected (List())
+        </msg>
+        <position>
+            <file>
+                file file1.c
+            </file>
+            <line>
+                79171
+            </line>
+            <col>
+                0
+            </col>
+        </position>
+    </parsererror>
+</errors>

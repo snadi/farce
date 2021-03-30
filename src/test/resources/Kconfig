@@ -1,0 +1,119 @@
+config MODULES
+    boolean "Enable loadable module support"
+    default y
+
+menu "Test Cases"
+
+# GUI only updates A if A is prompt, otherwise you must force an update
+# by selecting and reselecting 'Show all options'
+
+menu "Select - Lower Bound"
+
+# Selects-LowerBound
+config A
+    tristate
+config B
+    tristate "Test if lower bound on A is affected by C"
+    select A if C
+config C
+    tristate "Lower bound of A will change"
+
+endmenu
+
+menu "Default - Default y"
+config 2_A
+    tristate
+    default y if 2_B && 2_C
+
+config 2_B
+    tristate "Enable this (2_B)"
+
+config 2_C
+    tristate "Enable this (2_C)"
+endmenu
+
+menu "Default and select interaction (derived)"
+
+config 3_A
+    tristate
+    default y if 3_B
+
+config 3_B
+    tristate "Default is based on this"
+
+config 3_C
+    tristate "Selects 3_A"
+    select 3_A 
+
+endmenu
+
+menu "Default and select interaction (prompt)"
+
+config 3_A
+    tristate "Prompt"
+    default y if 3_B
+
+config 3_B
+    tristate "Default is based on this"
+
+config 3_C
+    tristate "Selects 3_A"
+    select 3_A 
+
+endmenu
+
+
+endmenu
+
+menu "Nesting"
+
+config 4A
+    tristate "A"
+
+config 4B
+    tristate "B"
+    depends on 4A
+
+config 4C
+    tristate "C"
+    depends on 4B
+
+endmenu
+
+menu "Choice Testing"
+
+config CHOICE_A
+    bool "Choice A"
+
+choice 
+    prompt "Choice"
+    depends on CHOICE_A
+    default HELLO_A
+
+    config HELLO_A
+        bool "Hello A"
+
+    config HELLO_B
+        bool "Hello B"
+endchoice
+
+endmenu
+
+menu "Range Testing"
+
+config RANGE_A
+    int "Range A"
+
+config RANGE_B
+    int "Range B"
+    range RANGE_A 100
+
+config RANGE_C
+    int "Range C"
+    range RANGE_A RANGE_A
+
+config RANGE_D
+    int "Range D"
+    range 0 RANGE_A
+
+endmenu

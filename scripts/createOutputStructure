@@ -1,0 +1,18 @@
+#!/bin/bash
+
+mkdir output
+
+mkdir output/Comparison
+mkdir output/Comparison/CodeVsFeatureModel
+mkdir output/Comparison/FeatureModelVsCode
+mkdir output/Linker/DefUse
+mkdir output/PreprocessorErrors
+mkdir output/FeatureModel
+mkdir output/FilePcs
+mkdir output/Linker
+mkdir output/FeatureEffect
+mkdir output/FeatureEffect/Constraints
+mkdir output/ParserErrors
+mkdir output/TypeErrors
+mkdir output/TypeErrors/DimacsConstraints
+

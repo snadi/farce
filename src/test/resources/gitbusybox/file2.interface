@@ -1,0 +1,38 @@
+<interface>
+    <featuremodel>
+        1
+    </featuremodel>
+    <export>
+        <sig>
+            <name>
+                funct1
+            </name>
+            <type>
+                <function>
+                    <param>
+                        <void></void>
+                    </param>
+                    <ret>
+                        <signed>
+                            <int></int>
+                        </signed>
+                    </ret>
+                </function>
+            </type>
+            <featureexpr>
+                definedEx(CONFIG_C)
+            </featureexpr>
+            <pos>
+                <file>
+                    file gitbusybox/networking/telnetd.c
+                </file>
+                <line>
+                    77509
+                </line>
+                <col>
+                    1
+                </col>
+            </pos>
+        </sig>
+    </export>
+</interface>

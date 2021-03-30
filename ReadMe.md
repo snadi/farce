@@ -4,6 +4,7 @@ FARCE
 FeAtureConstraintsExtraction (FARCE) can extract constraints from build-time errors and the effects of feature selection on the code structure.
 It relies on information extracted by [TypeChef](https://github.com/snadi/TypeChef). FARCE can also compare constraints and Boolean formulas.
 
+Note that this repo was originally hosted as a mercurial repo on bitbucket and it got lost with BitBucket stopping support for mercurial. This contains the final state of the code, but unfortunately I no longer have access to the history
 
 Usage
 =====
